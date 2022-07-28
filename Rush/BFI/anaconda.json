@@ -1,11 +1,8 @@
 {
     "schemaVersion": 1,
     "label": "Anaconda",
-    "labelColor": "grey",
     "message": "v3",
     "color": "blue",
-    "isError": "false",
     "namedLogo": "Anaconda",
-    "style":"flat",
-    "logoSvg":"none"
+    "style":"for-the-badge"
 }
