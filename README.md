@@ -8,13 +8,10 @@
 {
   "schemaVersion": 1,
   "label": "XXXXXXXXXXXXXXXX",
-  "labelColor": "grey",
   "message": "XXXXXXXXXXXXXX",
   "color": "blue",
-  "isError": "false",
-  "namedLogo": "none",
-  "logoSvg":"none",
-  "style":"flat"
+  "namedLogo": "XXXXXXXXXXXX",
+  "style":"for-the-badge"
 }
 ```
 
