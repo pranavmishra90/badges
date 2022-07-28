@@ -1,8 +1,7 @@
 {
   "schemaVersion": 1,
   "label": "License",
-  "labelColor": "grey",
   "message": "MIT",
   "color": "blue",
-  "style":"flat"
+  "style": "flat"
 }
