@@ -11,8 +11,8 @@
 ```json
 {
   "schemaVersion": 1,
-  "label": "XXXXXXXXXXXXXXXX",
-  "message": "XXXXXXXXXXXXXX",
+  "label": "XXXXXXXXXXXX",
+  "message": "XXXXXXXXXXXX",
   "color": "blue",
   "namedLogo": "XXXXXXXXXXXX",
   "style": "for-the-badge"
@@ -24,7 +24,7 @@
 ```json
 {
   "schemaVersion": 1,
-  "message": "XXXXXXXXXXXXXX",
+  "message": "XXXXXXXXXXXX",
   "color": "blue",
   "namedLogo": "XXXXXXXXXXXX",
   "style": "for-the-badge"
@@ -37,11 +37,11 @@
 {
   "schemaVersion": 1, //must keep as version 1
 
-  "label": "XXXXXXXXXXXXXXXX", // text to the left side
+  "label": "Node-REDXX", // text to the left side
 
   "labelColor": "grey", //color of the left side background
 
-  "message": "XXXXXXXXXXXXXX", //text to the right side
+  "message": "Node-RED", //text to the right side
 
   "color": "blue", //color of the right side background
 
@@ -49,7 +49,7 @@
 
   "namedLogo": "none", //one of the named icons supported by SimpleIcons (https://simpleicons.org/) or ShieldsIO
 
-  "logoSvg": "none", //URL to a custom SVG for the left side logo
+  "logoSvg": "none", //custom SVG code for the left side logo
 
   "style": "flat" //default (flat). options "for-the-badge", "flat-square", "flat", "plastic", "social"
 }
