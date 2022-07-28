@@ -1,10 +1,11 @@
+# Shields.IO Badges
+
+[Shields.IO Endpoint Tester](https://shields.io/endpoint)
+
 ## Default Template
-
-
-
-
-### Copy this codeblock
+### Left and Right Sides
 ```json
+
 {
   "schemaVersion": 1,
   "label": "XXXXXXXXXXXXXXXX",
@@ -13,10 +14,26 @@
   "namedLogo": "XXXXXXXXXXXX",
   "style":"for-the-badge"
 }
+
 ```
+### Right side only (Logo + Language)
+```json
+
+{
+  "schemaVersion": 1,
+  "label": "XXXXXXXXXXXXXXXX",
+  "message": "XXXXXXXXXXXXXX",
+  "color": "blue",
+  "namedLogo": "XXXXXXXXXXXX",
+  "style":"for-the-badge"
+}
+
+```
+
 
 ### Description of what each line does
 ```json
+
 {
     "schemaVersion": 1, //must keep as version 1
 
@@ -36,4 +53,5 @@
 
     "style":"flat" //default (flat). options "for-the-badge", "flat-square", "flat", "plastic", "social"
 }
+
 ```
