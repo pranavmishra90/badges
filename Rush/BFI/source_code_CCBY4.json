@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "label": "License",
+  "labelColor": "grey",
+  "message": "CC-BY-4.0",
+  "color": "blue",
+  "isError": "false",
+  "namedLogo": "Creative Commons",
+  "style":"flat",
+  "logoSvg":"none"
+}
