@@ -1,9 +1,9 @@
 {
-    "prettier": {
-        "trailingComma": "es5",
-        "singleQuote": false,
-        "printWidth": 80,
-        "tabWidth": 2, 
-        "endOfLine": "lf"
-      }
+  "prettier": {
+    "trailingComma": "es5",
+    "singleQuote": false,
+    "printWidth": 80,
+    "tabWidth": 2,
+    "endOfLine": "lf"
+  }
 }
