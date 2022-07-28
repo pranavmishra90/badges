@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "label": "Pre-Commit",
+  "message": "pre-commit",
+  "color": "green",
+  "namedLogo": "pre-commit",
+  "style": "for-the-badge"
+}
