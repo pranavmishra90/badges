@@ -1,11 +1,7 @@
 {
   "schemaVersion": 1,
   "label": "License",
-  "labelColor": "grey",
   "message": "MIT",
   "color": "blue",
-  "isError": "false",
-  "namedLogo": "none",
-  "style":"flat",
-  "logoSvg":"none"
+  "style": "for-the-badge"
 }
