@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "label": "",
   "message": "Synology",
-  "color": "#B5B5B6",
+  "color": ["#B5B5B6", "blue", "lightgrey"],
   "namedLogo": "Synology",
   "style": "for-the-badge"
 }

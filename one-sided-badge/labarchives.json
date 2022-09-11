@@ -2,6 +2,6 @@
   "schemaVersion": 1,
   "label": "",
   "message": "LabArchives",
-  "color": "59286e",
+  "color": ["59286e", "blue", "lightgrey"],
   "style": "for-the-badge"
 }

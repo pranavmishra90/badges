@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "label": "",
   "message": "Docker",
-  "color": "2CA5E0",
+  "color": ["2CA5E0", "blue", "lightgrey"],
   "namedLogo": "Docker",
   "style": "for-the-badge"
 }

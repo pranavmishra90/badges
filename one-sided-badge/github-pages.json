@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "label": "",
   "message": "GitHub Pages",
-  "color": "222222",
+  "color": ["222222", "blue", "lightgrey"],
   "namedLogo": "GitHub Pages",
   "style": "for-the-badge"
 }

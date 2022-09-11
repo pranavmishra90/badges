@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "label": "",
   "message": "Gitea",
-  "color": "609926",
+  "color": ["609926", "blue", "lightgrey"],
   "namedLogo": "Gitea",
   "style": "for-the-badge"
 }
