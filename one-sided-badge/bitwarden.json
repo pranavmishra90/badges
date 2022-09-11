@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "label": "",
   "message": "Bitwarden",
-  "color": "175DDC",
+  "color": ["175DDC", "blue", "lightgrey"],
   "namedLogo": "Bitwarden",
   "style": "for-the-badge"
 }

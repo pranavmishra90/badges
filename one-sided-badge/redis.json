@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "label": "",
   "message": "Redis",
-  "color": "DC382D",
+  "color": ["DC382D", "blue", "lightgrey"],
   "namedLogo": "Redis",
   "style": "for-the-badge"
 }

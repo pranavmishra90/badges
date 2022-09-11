@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "label": "",
   "message": "ResearchGate",
-  "color": "00CCBB",
+  "color": ["00CCBB", "blue", "lightgrey"],
   "namedLogo": "ResearchGate",
   "style": "for-the-badge"
 }

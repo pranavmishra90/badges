@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "label": "",
   "message": "Cloudflare",
-  "color": "F38020",
+  "color": ["F38020", "blue", "lightgrey"],
   "namedLogo": "Cloudflare",
   "style": "for-the-badge"
 }

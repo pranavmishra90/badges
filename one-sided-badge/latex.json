@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "label": "",
   "message": "LaTeX",
-  "color": "008080",
+  "color": ["008080", "blue", "lightgrey"],
   "namedLogo": "LaTeX",
   "style": "for-the-badge"
 }

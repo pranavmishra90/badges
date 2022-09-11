@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "message": "LinkedIn",
-  "color": "0A66C2",
+  "color": ["0A66C2", "blue", "lightgrey"],
   "namedLogo": "LinkedIn",
   "style": "for-the-badge"
 }

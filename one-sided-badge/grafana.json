@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "label": "",
   "message": "Grafana",
-  "color": "F46800",
+  "color": ["F46800", "blue", "lightgrey"],
   "namedLogo": "Grafana",
   "style": "for-the-badge"
 }

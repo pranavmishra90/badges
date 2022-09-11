@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "label": "",
   "message": "SQLite",
-  "color": "003545",
+  "color": ["003545", "blue", "lightgrey"],
   "namedLogo": "SQLite",
   "style": "for-the-badge"
 }

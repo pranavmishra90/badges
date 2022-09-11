@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "label": "",
   "message": "Matrix",
-  "color": "000000",
+  "color": ["000000", "blue", "lightgrey"],
   "namedLogo": "Matrix",
   "style": "for-the-badge"
 }

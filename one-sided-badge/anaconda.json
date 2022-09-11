@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "label": "",
   "message": "Conda",
-  "color": "342B029",
+  "color": ["342B029", "blue", "lightgrey"],
   "namedLogo": "Anaconda",
   "style": "for-the-badge"
 }
