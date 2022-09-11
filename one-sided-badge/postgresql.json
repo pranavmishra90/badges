@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "label": "",
   "message": "PostgreSQL",
-  "color": ["4169E1", "blue", "lightgrey"],
+  "color": "4169E1",
   "namedLogo": "PostgreSQL",
   "style": "for-the-badge"
 }
