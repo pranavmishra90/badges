@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "label": "",
   "message": "Prometheus",
-  "color": "E6522C",
+  "color": ["E6522C", "blue", "lightgrey"],
   "namedLogo": "Prometheus",
   "style": "for-the-badge"
 }

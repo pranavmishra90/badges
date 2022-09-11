@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "label": "",
   "message": "Plex",
-  "color": "E5A00D",
+  "color": ["E5A00D", "blue", "lightgrey"],
   "namedLogo": "Plex",
   "style": "for-the-badge"
 }

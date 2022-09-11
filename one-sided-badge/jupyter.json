@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "label": "",
   "message": "Jupyter",
-  "color": "F37626",
+  "color": ["F37626", "blue", "lightgrey"],
   "namedLogo": "jupyter",
   "style": "for-the-badge"
 }

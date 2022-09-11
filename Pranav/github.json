@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "label": "GitHub",
   "message": "pranavmishra90",
-  "color": "181717",
+  "color": ["181717", "blue", "lightgrey"],
   "namedLogo": "GitHub",
   "style": "for-the-badge"
 }
