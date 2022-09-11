@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "label": "License",
   "message": "MIT",
+  "label": "",
   "color": "black",
   "style": "for-the-badge"
 }
