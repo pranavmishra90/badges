@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "label": "",
   "message": "Home Assistant",
-  "color": ["41BDF5", "blue", "lightgrey"],
+  "color": "41BDF5",
   "namedLogo": "Home Assistant",
   "style": "for-the-badge"
 }
