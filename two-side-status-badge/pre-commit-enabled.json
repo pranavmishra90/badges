@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "label": "Pre-Commit",
-  "message": "pre-commit",
+  "message": "Enabled",
   "color": "green",
   "namedLogo": "pre-commit",
   "style": "for-the-badge"
