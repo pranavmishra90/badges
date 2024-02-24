@@ -60,3 +60,8 @@ process_json_files "3e4c75" "rendered-in-theme/blue-badges.md"
 # Grey theme
 ##############################
 process_json_files "grey" "rendered-in-theme/grey-badges.md"
+
+##############################
+# Black theme
+##############################
+process_json_files "black" "rendered-in-theme/black-badges.md"
