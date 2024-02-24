@@ -9,6 +9,15 @@ on:
     branches:
       - "develop"
 
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: "Log level"
+        required: true
+        default: "warning"
+      tags:
+        description: "Manual run of render_badges.sh"
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -47,6 +56,6 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GH_TOKEN }}
-          branch: ${{ github.ref }}
+          branch: develop
 
         # Created a new secret
