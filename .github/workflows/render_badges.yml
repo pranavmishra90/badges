@@ -13,22 +13,36 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: true # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
-          fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
       - name: Run render_badges.sh
         run: bash render_badges.sh
 
-      - name: Commit files
+      - name: Commit changes
         run: |
-          git config --local user.email "62562712+pranavmishra90@users.noreply.github.com"
-          git config --local user.name "GitHub Action for pranavmishra90"
-          git commit -a -m "Render themed badges"
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Render badges" || echo "No changes to commit"
+          git push
+    # steps:
+    #   - uses: actions/checkout@v4
+    #     with:
+    #       persist-credentials: true # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
+    #       fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
 
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+    #   - name: Run render_badges.sh
+    #     run: bash render_badges.sh
+
+    #   - name: Commit files
+    #     run: |
+    #       git config --local user.email "62562712+pranavmishra90@users.noreply.github.com"
+    #       git config --local user.name "GitHub Action for pranavmishra90"
+    #       git commit -a -m "Render themed badges"
+
+    #   - name: Push changes
+    #     uses: ad-m/github-push-action@master
+    #     with:
+    #       github_token: ${{ secrets.GITHUB_TOKEN }}
+    #       branch: ${{ github.ref }}
