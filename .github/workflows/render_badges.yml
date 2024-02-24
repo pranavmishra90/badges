@@ -48,13 +48,13 @@ jobs:
           PR_BODY="This pull request updates the rendered badges."
           PR_BRANCH="develop"
           PR_TARGET_BRANCH="main"
-          PR_URL=$(curl -X GET -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls?state=open" | jq -r ".[0].html_url")
+          PR_URL=$(curl -X GET -s -H "Authorization: Bearer ${{ secrets.GH_TOKEN }}" "https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls?state=open" | jq -r ".[0].html_url")
 
           if [ -z "$PR_URL" ]; then
             # No open pull requests found, create a new one
-            curl -X POST -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" -H "Content-Type: application/json" -d "{\"title\":\"$PR_TITLE\",\"body\":\"$PR_BODY\",\"head\":\"$PR_BRANCH\",\"base\":\"$PR_TARGET_BRANCH\"}" "https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls"
+            curl -X POST -s -H "Authorization: Bearer ${{ secrets.GH_TOKEN }}" -H "Content-Type: application/json" -d "{\"title\":\"$PR_TITLE\",\"body\":\"$PR_BODY\",\"head\":\"$PR_BRANCH\",\"base\":\"$PR_TARGET_BRANCH\"}" "https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls"
           else
             # Update the latest open pull request
             PR_NUMBER=$(echo $PR_URL | awk -F'/' '{print $NF}')
-            curl -X PATCH -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" -H "Content-Type: application/json" -d "{\"title\":\"$PR_TITLE\",\"body\":\"$PR_BODY\"}" "https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls/$PR_NUMBER"
+            curl -X PATCH -s -H "Authorization: Bearer ${{ secrets.GH_TOKEN }}" -H "Content-Type: application/json" -d "{\"title\":\"$PR_TITLE\",\"body\":\"$PR_BODY\"}" "https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls/$PR_NUMBER"
           fi
