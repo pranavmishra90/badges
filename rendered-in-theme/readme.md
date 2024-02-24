@@ -1,4 +1,6 @@
-# Shields.IO Badges - Templates by Pranav Mishra
+## Original Themed Badges
+
+Each badge is themed according to the official package / company color scheme.
 
 ---
 <img alt="microsoft-teams" src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fpranavmishra90%2Fbadges%2Fmain%2FRush/BFGI/microsoft-teams.json">
