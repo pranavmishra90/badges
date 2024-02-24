@@ -4,48 +4,31 @@ permissions: # Global permissions configuration starts here
   contents: read # 'read' access to repository contents
   pull-requests: write # 'write' access to pull requests
 
-on: [pull_request, pull_request_target]
-
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-#     steps:
-#     - uses: actions/checkout@v4
-#       with:
-#         persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
-#         fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
-
-#     - name: Run render_badges.sh
-#       run: bash render_badges.sh
-
-#     - name: Commit files
-#       run: |
-#         git config --local user.email "62562712+pranavmishra90@users.noreply.github.com"
-#         git config --local user.name "GitHub Action for pranavmishra90"
-#         git commit -a -m "Render themed badges"
-
-#         - name: Push changes
-#     uses: ad-m/github-push-action@master
-#     with:
-#       github_token: ${{ secrets.GITHUB_TOKEN }}
-#       branch: ${{ github.ref }}
+on:
+  push:
+    branches:
+      - "develop"
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
-          ref: ${{ github.head_ref }}
-          fetch-depth: 0
+          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
+          fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
+
       - name: Run render_badges.sh
         run: bash render_badges.sh
+
       - name: Commit files
         run: |
           git config --local user.email "62562712+pranavmishra90@users.noreply.github.com"
           git config --local user.name "GitHub Action for pranavmishra90"
           git commit -a -m "Render themed badges"
+
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          branch: ${{ github.head_ref }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
