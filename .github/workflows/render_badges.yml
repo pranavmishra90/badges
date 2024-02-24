@@ -4,7 +4,10 @@ permissions: # Global permissions configuration starts here
   contents: read # 'read' access to repository contents
   pull-requests: write # 'write' access to pull requests
 
-on: [pull_request, pull_request_target]
+on:
+  push:
+    branches:
+      - "develop"
 
 jobs:
   build:
