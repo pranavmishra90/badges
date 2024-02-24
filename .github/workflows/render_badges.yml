@@ -21,22 +21,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    # steps:
-    # - uses: actions/checkout@v4
-    #   with:
-    #     persist-credentials: true # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
-    #     fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
-
-    # - name: Run render_badges.sh
-    #   run: bash render_badges.sh
-
-    # - name: Commit changes
-    #   run: |
-    #     git config --local user.email "action@github.com"
-    #     git config --local user.name "GitHub Action"
-    #     git add .
-    #     git commit -m "Render badges" || echo "No changes to commit"
-    #     git push
     steps:
       - uses: actions/checkout@v4
         with:
@@ -58,4 +42,19 @@ jobs:
           github_token: ${{ secrets.GH_TOKEN }}
           branch: develop
 
-        # Created a new secret
+      - name: Create/Update Pull Request
+        run: |
+          PR_TITLE="Updated render of badges"
+          PR_BODY="This pull request updates the rendered badges."
+          PR_BRANCH="develop"
+          PR_TARGET_BRANCH="main"
+          PR_URL=$(curl -X GET -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls?state=open" | jq -r ".[0].html_url")
+
+          if [ -z "$PR_URL" ]; then
+            # No open pull requests found, create a new one
+            curl -X POST -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" -H "Content-Type: application/json" -d "{\"title\":\"$PR_TITLE\",\"body\":\"$PR_BODY\",\"head\":\"$PR_BRANCH\",\"base\":\"$PR_TARGET_BRANCH\"}" "https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls"
+          else
+            # Update the latest open pull request
+            PR_NUMBER=$(echo $PR_URL | awk -F'/' '{print $NF}')
+            curl -X PATCH -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" -H "Content-Type: application/json" -d "{\"title\":\"$PR_TITLE\",\"body\":\"$PR_BODY\"}" "https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls/$PR_NUMBER"
+          fi
