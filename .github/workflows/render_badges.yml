@@ -31,7 +31,7 @@ jobs:
         run: |
           git config --local user.email "62562712+pranavmishra90@users.noreply.github.com"
           git config --local user.name "GitHub Action for pranavmishra90"
-          git commit -a -m "Render themed badges"
+          git commit -a -m "feat(CI-Auto): Render themed badges"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
