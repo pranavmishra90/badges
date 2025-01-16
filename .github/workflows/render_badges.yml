@@ -30,6 +30,8 @@ jobs:
       - uses: webfactory/ssh-agent@v0.9.0
         with:
           ssh-private-key: ${{ secrets.FACSIMILAB_BOT_SSHKEY }}
+        
+      - name: render, commit, and push
         run: |
           bash render_badges.sh
           git config --local user.email "195262995+facsimilab-bot@users.noreply.github.com"
