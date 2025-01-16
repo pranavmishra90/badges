@@ -4,6 +4,9 @@ on:
   pull_request:
     branches:
       - main
+  push:
+    paths:
+      - '**.log.md'
   workflow_dispatch:
   
 
