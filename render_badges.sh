@@ -48,8 +48,8 @@ done <<< "$json_files"
 # Step 4: Replace content in rendered-in-theme/readme.md and main README.md
 sed -i '/---/,$d' rendered-in-theme/readme.md  # Delete everything after the first line containing "---"
 echo -e "---\n$output" >> rendered-in-theme/readme.md  # Append the output after the first line containing "---"
-sed -i '/---/,$d' README.md  # Delete everything after the first line containing "---"
-echo -e "---\n$output" >> README.md
+sed -i '/------/,$d' README.md  # Delete everything after the first line containing "---"
+echo -e "------\n$output" >> README.md
 
 sed -i '/---/,$d' logs/render_badges.log.md
 echo $(date) >> logs/render_badges.log.md
