@@ -29,7 +29,7 @@ process_json_files() {
 }
 
 # Find all JSON files except "settings.json"
-json_files=$(find . -type f -name "*.json" -not -name "settings.json")
+json_files=$(find . -type f -name "*.json" -not -name "settings.json" -not -name "package.json")
 
 ##############################
 # Original theme
@@ -60,3 +60,8 @@ process_json_files "3e4c75" "rendered-in-theme/blue-badges.md"
 # Grey theme
 ##############################
 process_json_files "grey" "rendered-in-theme/grey-badges.md"
+
+##############################
+# Black theme
+##############################
+process_json_files "black" "rendered-in-theme/black-badges.md"

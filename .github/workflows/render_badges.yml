@@ -1,53 +1,38 @@
 name: Render Badges
 
-permissions: # Global permissions configuration starts here
-  contents: read # 'read' access to repository contents
-  pull-requests: write # 'write' access to pull requests
+on: [pull_request, pull_request_target]
 
-on:
-  push:
-    branches:
-      - "develop"
-      - "main"
+
+permissions:
+  id-token: write
+  contents: write
+  pull-requests: read
+
+concurrency:
+  group: '${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}'
+  cancel-in-progress: true
 
 jobs:
-  build:
+  render_badgets:
     runs-on: ubuntu-latest
-    # steps:
-    # - uses: actions/checkout@v4
-    #   with:
-    #     persist-credentials: true # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
-    #     fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
-
-    # - name: Run render_badges.sh
-    #   run: bash render_badges.sh
-
-    # - name: Commit changes
-    #   run: |
-    #     git config --local user.email "action@github.com"
-    #     git config --local user.name "GitHub Action"
-    #     git add .
-    #     git commit -m "Render badges" || echo "No changes to commit"
-    #     git push
     steps:
       - uses: actions/checkout@v4
+        name: Check out repository to the runner
         with:
-          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
-          fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
 
       - name: Run render_badges.sh
         run: bash render_badges.sh
 
       - name: Commit files
         run: |
-          git config --local user.email "62562712+pranavmishra90@users.noreply.github.com"
-          git config --local user.name "GitHub Action for pranavmishra90"
-          git commit -a -m "Render themed badges"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -a -m "ci: Render themed badges"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GH_TOKEN }}
-          branch: ${{ github.ref }}
-
-        # Created a new secret
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.head_ref }}
