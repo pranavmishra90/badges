@@ -1,0 +1,20 @@
+reviewers:
+  defaults:
+    - pranavmishra90
+
+  groups:
+    core-contributers:
+      - pranavmishra90
+    bots:
+      - facsimilab-bot
+
+  per_author:
+    facsimilab-bot:
+      - core-contributers
+
+files:
+  "**":
+    - core-contributers
+
+options:
+  number_of_reviewers: 1
