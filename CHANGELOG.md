@@ -1,6 +1,23 @@
 # CHANGELOG
 
 
+## v0.2.0 (2025-01-16)
+
+### Features
+
+- Add PSR toml, templates, and action to clear rc tags
+  ([#13](https://github.com/pranavmishra90/badges/pull/13),
+  [`663e976`](https://github.com/pranavmishra90/badges/commit/663e9769c9aeced609afe369787b04958cabeb70))
+
+* feat: add PSR toml, templates, and action to clear rc tags
+
+* ci: Render themed badges
+
+---------
+
+Co-authored-by: FacsimiLab [Bot] <195262995+facsimilab-bot@users.noreply.github.com>
+
+
 ## v0.1.1 (2025-01-16)
 
 ### Bug Fixes
