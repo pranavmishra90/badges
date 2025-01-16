@@ -21,7 +21,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  render_badgets:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -41,10 +41,10 @@ jobs:
         run: |
           if [[ "${GITHUB_REF}" == "refs/heads/main" ]]; then
             echo "Pushing to main branch."
-            echo "::set-output name=branch::HEAD:refs/heads/main"
+            echo "::set-output name=branch::remotes/origin/main"
           else
             echo "Pushing to tmp branch."
-            echo "::set-output name=branch::HEAD:refs/heads/tmp"
+            echo "::set-output name=branch::remotes/origin/tmp"
           fi
 
       - name: Push changes
