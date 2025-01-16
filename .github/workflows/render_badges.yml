@@ -1,6 +1,13 @@
 name: Render Badges
 
-on: [pull_request, pull_request_target]
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  
 
 
 permissions:
@@ -13,26 +20,33 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  render_badgets:
+  render_badges:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         name: Check out repository to the runner
         with:
           ref: ${{ github.head_ref }}
-          fetch-depth: 0
+          fetch-depth: 5
 
-      - name: Run render_badges.sh
-        run: bash render_badges.sh
-
-      - name: Commit files
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git commit -a -m "ci: Render themed badges"
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+      - uses: webfactory/ssh-agent@v0.9.0
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.head_ref }}
+          ssh-private-key: ${{ secrets.FACSIMILAB_BOT_SSHKEY }}
+      - run: |
+          bash render_badges.sh
+          git config --local user.email "195262995+facsimilab-bot@users.noreply.github.com"
+          git config --local user.name "FacsimiLab [Bot]"
+          git config --local user.signingkey "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAEjI+PVQQhQjLVRmB6NnDJhqXKaVjzcr4KG1vqMkd2m  FacsimiLab [Bot]"
+          git config --local gpg.format ssh
+          git config --local commit.gpgsign true
+          git config --local tag.gpgSign true
+
+
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -a -m "ci: Render themed badges"
+          else
+            echo "No changes to commit"
+          fi
+
+
+          git push
