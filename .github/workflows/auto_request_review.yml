@@ -1,8 +1,10 @@
 name: Auto Request Review
 
 on:
-  pull_request:
-    types: [opened, synchronize, labeled, ready_for_review]
+  workflow_run:
+    workflows: [CI]
+    types:
+      - completed
 
 jobs:
   auto-request-review:
