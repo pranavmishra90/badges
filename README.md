@@ -6,16 +6,7 @@
 
 ## Themes
 | Theme | Example |
-| :------: | :-----: |
-| [Black](rendered-in-theme/black-badges.md) | <img alt="connect_matrix" src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fpranavmishra90%2Fbadges%2Fmain%2FPranav/connect_matrix.json&color=black"> |
-| [Blue](rendered-in-theme/blue-badges.md) | <img alt="connect_matrix" src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fpranavmishra90%2Fbadges%2Fmain%2FPranav/connect_matrix.json&color=3e4c75"> |
-| [Grey](rendered-in-theme/grey-badges.md) | <img alt="connect_matrix" src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fpranavmishra90%2Fbadges%2Fmain%2FPranav/connect_matrix.json&color=grey"> |
-
-## Defaults
-
 ---
-
- 
 <img alt="microsoft-teams" src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fpranavmishra90%2Fbadges%2Fmain%2FRush/BFGI/microsoft-teams.json">
 
 ```<img alt="microsoft-teams" src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fpranavmishra90%2Fbadges%2Fmain%2FRush/BFGI/microsoft-teams.json">```
