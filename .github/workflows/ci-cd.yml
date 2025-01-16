@@ -12,7 +12,6 @@ concurrency:
 
 jobs:
 
-  # Cleanup the tags by deleting the release candidate tags
   delete-rc-tags:
     runs-on: ubuntu-latest
 
