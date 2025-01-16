@@ -51,8 +51,8 @@ echo -e "---\n$output" >> rendered-in-theme/readme.md  # Append the output after
 sed -i '/---/,$d' README.md  # Delete everything after the first line containing "---"
 echo -e "---\n$output" >> README.md
 
-sed -i '/---/,$d' .github/workflows/logs/render_badges.log.md
-echo $(date) >> .github/workflows/logs/render_badges.log.md
+sed -i '/---/,$d' logs/render_badges.log.md
+echo $(date) >> logs/render_badges.log.md
 
 ##############################
 # Blue theme
