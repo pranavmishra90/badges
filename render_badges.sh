@@ -29,7 +29,7 @@ process_json_files() {
 }
 
 # Find all JSON files except "settings.json"
-json_files=$(find . -type f -name "*.json" -not -name "settings.json")
+json_files=$(find . -type f -name "*.json" -not -name "settings.json" -not -name "package.json")
 
 ##############################
 # Original theme
