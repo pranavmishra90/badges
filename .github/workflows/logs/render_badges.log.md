@@ -1,0 +1,6 @@
+# [Log] Render Badges
+
+Date:
+
+---
+

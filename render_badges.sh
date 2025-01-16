@@ -50,7 +50,9 @@ sed -i '/---/,$d' rendered-in-theme/readme.md  # Delete everything after the fir
 echo -e "---\n$output" >> rendered-in-theme/readme.md  # Append the output after the first line containing "---"
 sed -i '/---/,$d' README.md  # Delete everything after the first line containing "---"
 echo -e "---\n$output" >> README.md
-echo $(date) >> README.md
+
+sed -i '/---/,$d' .github/workflows/logs/render_badges.log.md
+echo $(date) >> .github/workflows/logs/render_badges.log.md
 
 ##############################
 # Blue theme
