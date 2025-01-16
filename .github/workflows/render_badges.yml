@@ -1,10 +1,5 @@
 name: Render Badges
 
-permissions:
-  id-token: write
-  contents: write
-  pull-requests: read
-
 on:
   push:
     branches:
@@ -15,6 +10,11 @@ on:
       - main
 
   workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: write
+  pull-requests: read
 
 concurrency:
   group: '${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}'
@@ -36,8 +36,20 @@ jobs:
           git config --local user.name "GitHub Action"
           git commit -a -m "ci: Render themed badges"
 
+      - name: Determine target branch
+        id: set_branch
+        run: |
+          if [[ "${GITHUB_REF}" == "refs/heads/main" ]]; then
+            echo "Pushing to main branch."
+            echo "::set-output name=branch::main"
+          else
+            echo "Pushing to tmp branch."
+            echo "::set-output name=branch::tmp"
+          fi
+
       - name: Push changes
+        id: push_changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+          branch: ${{ steps.set_branch.outputs.branch }}
