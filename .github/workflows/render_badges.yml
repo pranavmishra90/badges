@@ -1,9 +1,6 @@
 name: Render Badges
 
 on: 
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
