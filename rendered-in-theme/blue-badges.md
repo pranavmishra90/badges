@@ -195,8 +195,4 @@ The blue color theme is by HTML color `#3e4c75`
 
 ```<img alt="datalad" src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fpranavmishra90%2Fbadges%2Fmain%2Ftwo-side-status-badge/datalad.json&color=3e4c75">```
 
-<img alt="package" src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fpranavmishra90%2Fbadges%2Fmain%2Fpackage.json&color=3e4c75">
-
-```<img alt="package" src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fpranavmishra90%2Fbadges%2Fmain%2Fpackage.json&color=3e4c75">```
-
 
