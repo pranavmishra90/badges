@@ -1,15 +1,7 @@
 name: Render Badges
 
-on:
-  push:
-    branches:
-      - main
+on: [pull_request, pull_request_target]
 
-  pull_request:
-    branches:
-      - main
-
-  workflow_dispatch:
 
 permissions:
   id-token: write
@@ -26,30 +18,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         name: Check out repository to the runner
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
 
       - name: Run render_badges.sh
         run: bash render_badges.sh
 
       - name: Commit files
         run: |
-          git config --local user.email "action@noreply.github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
           git commit -a -m "ci: Render themed badges"
 
-      - name: Determine target branch
-        id: set_branch
-        run: |
-          if [[ "${GITHUB_REF}" == "refs/heads/main" ]]; then
-            echo "Pushing to main branch."
-            echo "::set-output name=branch::remotes/origin/main"
-          else
-            echo "Pushing to tmp branch."
-            echo "::set-output name=branch::remotes/origin/tmp"
-          fi
-
       - name: Push changes
-        id: push_changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ steps.set_branch.outputs.branch }}
+          branch: ${{ github.head_ref }}
