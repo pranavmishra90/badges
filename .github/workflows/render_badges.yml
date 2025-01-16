@@ -38,5 +38,16 @@ jobs:
           git config --local user.email "195262995+facsimilab-bot@users.noreply.github.com"
           git config --local user.name "FacsimiLab [Bot]"
           git config --local user.signingkey "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAEjI+PVQQhQjLVRmB6NnDJhqXKaVjzcr4KG1vqMkd2m  FacsimiLab [Bot]"
-          git commit -a -S -m "ci: Render themed badges"
+          git config --local gpg.format ssh
+          git config --local commit.gpgsign true
+          git config --local tag.gpgSign true
+
+
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -a -m "ci: Render themed badges"
+          else
+            echo "No changes to commit"
+          fi
+
+
           git push
