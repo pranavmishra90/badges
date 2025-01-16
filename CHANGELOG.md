@@ -1,6 +1,25 @@
 # CHANGELOG
 
 
+## v0.1.1 (2025-01-16)
+
+### Bug Fixes
+
+- Log rendering
+  ([`29e2f1e`](https://github.com/pranavmishra90/badges/commit/29e2f1e8f5d726ba68566f7bb1b5048942e3c226))
+
+- Log rendering ([#12](https://github.com/pranavmishra90/badges/pull/12),
+  [`a07b069`](https://github.com/pranavmishra90/badges/commit/a07b06915cdfab06279f9a366a91fce16269209f))
+
+### Continuous Integration
+
+- Render themed badges
+  ([`ceadf57`](https://github.com/pranavmishra90/badges/commit/ceadf5749d5cd24d56c8e93ccbc6d9cd558a9aa8))
+
+- Render themed badges
+  ([`446ff2c`](https://github.com/pranavmishra90/badges/commit/446ff2cfd6bf135aa48f6bca5a49c0899340fdc7))
+
+
 ## v0.1.0 (2025-01-16)
 
 ### Bug Fixes
