@@ -52,7 +52,7 @@ sed -i '/------/,$d' README.md  # Delete everything after the first line contain
 echo -e "------\n$output" >> README.md
 
 sed -i '/---/,$d' logs/render_badges.log.md
-echo $(date) >> logs/render_badges.log.md
+echo -e "---\n\n$(date)    " >> logs/render_badges.log.md
 
 ##############################
 # Blue theme
