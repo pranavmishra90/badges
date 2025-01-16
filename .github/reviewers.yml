@@ -8,10 +8,13 @@ reviewers:
     bots:
       - facsimilab-bot
 
+  per_author:
+    facsimilab-bot:
+      - core-contributers
+
 files:
   "**":
-    - core-contributors # group
-    - js-lovers # group
+    - core-contributers
 
 options:
   number_of_reviewers: 1
