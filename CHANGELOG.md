@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v0.4.0 (2025-02-20)
+
+### Features
+
+- Add cc-by-sa 4.0 badge
+  ([`87c16d5`](https://github.com/pranavmishra90/badges/commit/87c16d52838f698080ba95faacf6ff9e7bae7ca8))
+
+
 ## v0.3.0 (2025-01-16)
 
 ### Bug Fixes
@@ -27,6 +35,9 @@
 
 - Render themed badges
   ([`576ab1c`](https://github.com/pranavmishra90/badges/commit/576ab1c11ab821d3e52cbd367fcf56d99aedc717))
+
+- **semantic-release**: Update changelog. create tag and release, if needed, v0.3.0
+  ([`08aad95`](https://github.com/pranavmishra90/badges/commit/08aad9584aa8205b6d1d9badcdd26fb8a11bc0ee))
 
 ### Features
 
