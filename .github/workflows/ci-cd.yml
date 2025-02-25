@@ -67,7 +67,8 @@ jobs:
           git checkout -B ${{ github.ref_name }}
 
       - name: Python Semantic Release
-        uses: python-semantic-release/python-semantic-release@v9.15.2
+          id: semvar
+          uses: pranavmishra90/semvar-docker@v0.2.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           git_committer_email: "62562712+pranavmishra90@users.noreply.github.com"
@@ -78,3 +79,20 @@ jobs:
           commit: "true"
           push: "true"
           root_options: "-v"
+
+      - name: Update develop branch
+        run: |
+          
+          git checkout develop
+          git merge ${{ github.ref_name }} -m 'ci: merge release onto develop'
+          git push origin develop
+
+      - name: Workflow Status
+        run: |
+          echo "## Python Semantic Release - GitHub Action" >> $GITHUB_STEP_SUMMARY
+          echo ""  >> $GITHUB_STEP_SUMMARY
+          echo "Version: ${{ steps.semvar.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          printf "Tags: \n$(git tag -l)\n\n" >> $GITHUB_STEP_SUMMARY
+          echo "Released: ${{ steps.semvar.outputs.released }}" >> $GITHUB_STEP_SUMMARY
+          echo ""  >> $GITHUB_STEP_SUMMARY
+          cat CHANGELOG.md >> $GITHUB_STEP_SUMMARY
